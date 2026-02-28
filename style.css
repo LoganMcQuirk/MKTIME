@@ -1,0 +1,94 @@
+/* basic styling for high end watch eCommerce site */
+
+/********** general styling **********/
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+/********** navigation styling **********/
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li {
+    margin-right: 20px;
+}
+nav ul li a {
+    color: #fff;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    color: #ff6347;
+}
+
+
+/********** product listing styling **********/
+.product-listing {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(33.333% - 20px);
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+.product-card h3 {
+    margin: 0 0 10px;
+}
+.product-card p {
+    margin: 0 0 15px;
+    color: #555;
+}
+.product-card .price {
+    font-size: 1.2em;
+    color: #ff6347;
+    font-weight: bold;
+}
+.product-card button {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.product-card button:hover {
+    background-color: #e5533d;
+}
+/********** footer styling **********/
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+
