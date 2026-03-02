@@ -1,49 +1,15 @@
 <?php
 
+include ('../includes/accessible.php');
+
 include ('../includes/navbar.php');
 ?>
 <main class="container mt-4 mb-4 d-flex flex-column align-items-center">
 <h1>Welcome To MK Time</h1>
+<img src="../images/mktime.png" class="img-fluid" alt="MK Time Logo">
+<p>MK Time is a small online store that sells a variety of products. We are committed to providing our customers with the best possible shopping experience. We offer a wide range of products at competitive prices, and we are always adding new items to our inventory. We also offer free shipping on all orders over £50. Thank you for shopping with us!</p>
 
-<?php
- # Open database connection.
-	require ( '../config/connect_db.php' );
-	echo '<div class="row">';	
-	# Retrieve items from 'products' database table.
-	$q = "SELECT * FROM products" ;
-	$r = mysqli_query( $link, $q ) ;
-	if ( mysqli_num_rows( $r ) > 0 )
-	{
-	# Display body section.
-	
-	while ( $row = mysqli_fetch_array( $r, MYSQLI_ASSOC ))
-	{
-	echo '
-    <div class="row-md-3 d-flex justify-content-center">
-	 <div class="card" style="width: 18rem;">
-	  <img src="'. $row['item_img'].'" class="card-img-top" alt="'. $row['item_name'].'">
-	   <div class="card-body text-center">
-		<h5 class="card-title">'. $row['item_name'].'</h5>
-		<p class="card-text">'. $row['item_desc'].'</p>
-	 </div>
-	  <div class="card-footer bg-transparent border-dark text-center">
-		<p class="card-text">&pound '. $row['item_price'].'</p>
-	  </div>
-	  <div class="card-footer text-muted">
-		<a href="../cart/added.php?id='.$row['item_id'].'" class="btn btn-light btn-block">Add to Cart</a>
-	   </div>
-	  </div>
-	</div>  
-	';
-	}
-	# Close database connection.
-	mysqli_close( $link) ; 
-	}
-	# Or display message.
-	else { echo '<p>There are currently no items in the table to display.</p>
-	' ; }
-?>
-
+<a href="../products/products.php" class="btn btn-dark btn-lg">Shop Now</a>
 
 </main>
 

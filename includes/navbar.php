@@ -30,13 +30,16 @@ $current_page = basename($_SERVER['PHP_SELF']);
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item <?php echo ($current_page == 'home.php') ? 'active' : ''; ?>">
-        <a class="nav-link" href="../products/home.php">Home</a>
-      </li>
+      <?php 
+        include ('../auth/user_type.php');
+        if ( isset( $_SESSION[ 'email' ] ) && adminCheck( $_SESSION[ 'email' ] ) )
+        { include ('../includes/admin_nav.php'); }
+        else if ( isset( $_SESSION[ 'email' ] ) ) { include ('../includes/public_nav.php'); }
+        ?>
       
     </ul>
       <span class="nav-item ml-auto text-center ">
-        <a class="nav-link bg-dark text-white rounded" style="max-width: fit-content;" href="../auth/logout.php">Logout</a>
+        <a data-cy="logout-nav-link" class="nav-link bg-dark text-white rounded" style="max-width: fit-content;" href="../auth/logout.php">Logout</a>
       </span>
   </div>
 </nav>

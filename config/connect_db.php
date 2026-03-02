@@ -5,5 +5,4 @@
     if (!$link) {
         die('Could not connect: ' . mysqli_error());
     }
-        echo 'Connected successfully';
 ?>
