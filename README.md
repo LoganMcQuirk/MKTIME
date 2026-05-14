@@ -1,6 +1,6 @@
 # MK Time
 - This is a browser based eCommerce platform that emulates a watch sales business
-- The project focuses on the implementationof backend systems.
+- The project focuses on the implementation of backend systems.
 
 # Features
 - User DataBase with login system and hidden Admin features
